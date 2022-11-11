@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    height: 4rem;
+    background: black;
+    color: brown;
+    display: flex;
+    align-items: center;
+}
+nav li{
+    font-size: 3rem;
+    list-style-type: none;
+    padding: 0px 12px;
+}

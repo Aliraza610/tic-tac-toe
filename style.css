@@ -88,14 +88,14 @@ nav li{
 }
 
 .line{
-    left: 27rem;
+    left: 27rem; 
     background-color: black;
     height: 3px;
     width: 27vw;
     position: relative;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 950px) {
     .gamecontainer{
         flex-wrap: wrap;
     }
@@ -104,8 +104,11 @@ nav li{
         margin-top: 34px;
     }
     .container{
-        grid-template-columns: repeat(3, 20vw);
-        grid-template-rows: repeat(3, 20vw);
+        position: relative;
+        grid-template-columns: repeat(3, 15vw);
+        grid-template-rows: repeat(3, 15vw);
+        font-size: 2rem;
+        left: -125px;
     }
 }
 

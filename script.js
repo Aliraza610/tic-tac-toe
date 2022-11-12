@@ -14,20 +14,22 @@ const changeTurn = ()=>{
 const checkWin = ()=>{
     let boxtext = document.getElementsByClassName('boxtext');
     let wins = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6],
+        [0, 1, 2, 1, 5, 0],
+        [3, 4, 5, 1, 15, 0],
+        [6, 7, 8, 1, 25, 0],
+        [0, 3, 6, -9, 15, 90],
+        [1, 4, 7, 1, 15, 90],
+        [2, 5, 8, 11, 15, 90],
+        [0, 4, 8, 1, 15, 45],
+        [2, 4, 6, 1, 15, 135],
     ]
     wins.forEach(e =>{
         if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "") ){
             document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
             isgameover = true
             document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "200px";
+            document.querySelector(".line").style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`
+            document.querySelector(".line").style.width = "26vw";
         }
     })
 }
@@ -59,5 +61,7 @@ reset.addEventListener('click', ()=>{
     turn = "X"; 
     isgameover = false
     document.querySelector(".line").style.width = "0vw";
+    document.getElementsByClassName("info")[0].innerText  = "Turn for " + turn;
+    document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
 })
 
